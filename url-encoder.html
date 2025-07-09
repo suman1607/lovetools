@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder / Decoder - LoveTools</title>
+    <!-- Add Google Icons stylesheet for the swap icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>URL Encoder / Decoder</h1>
+            <p class="description">Encode your text to be URL-safe or decode a URL-encoded string.</p>
+
+            <div class="tool-card">
+                
+                <!-- We reuse the layout from the Base64 tool for consistency -->
+                <div class="encoder-layout">
+                    <!-- Left Panel: Decoded Text -->
+                    <div class="textarea-group">
+                        <label for="decoded-input">Decoded Text</label>
+                        <textarea id="decoded-input" class="text-input-area encoder-textarea" placeholder="Type or paste text here... e.g., hello world!"></textarea>
+                    </div>
+
+                    <!-- Middle: Swap Icon -->
+                    <span id="swap-icon" class="material-icons-outlined">sync_alt</span>
+
+                    <!-- Right Panel: Encoded URL Output -->
+                    <div class="textarea-group">
+                        <label for="encoded-output">URL-Encoded Text</label>
+                        <textarea id="encoded-output" class="text-input-area encoder-textarea" placeholder="Encoded output will appear here... e.g., hello%20world!"></textarea>
+                    </div>
+                </div>
+
+                <div class="encoder-actions">
+                    <button id="copy-decoded-btn" class="btn-secondary">Copy Decoded</button>
+                    <button id="copy-encoded-btn" class="btn-secondary">Copy Encoded</button>
+                    <button id="clear-all-btn" class="btn-secondary">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="url-encoder.js" defer></script>
+</body>
+</html>

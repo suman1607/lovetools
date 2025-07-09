@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Image Converter</h1>
+            <p class="description">Convert your images to JPG, PNG, or WEBP format with ease.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <label for="image-upload" id="upload-label">
+                        <span>Click to browse or drag & drop an image</span>
+                        <small>Supports: .png, .jpg, .jpeg, .webp, .bmp</small>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" hidden>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <div class="format-selection">
+                        <label for="format-select">Convert to:</label>
+                        <select id="format-select">
+                            <option value="png">PNG</option>
+                            <option value="jpeg">JPG</option>
+                            <option value="webp">WEBP</option>
+                        </select>
+                    </div>
+                    
+                    <!-- JPG Quality slider - hidden by default -->
+                    <div id="quality-container" class="quality-container" hidden>
+                        <div class="quality-slider">
+                            <label for="quality">JPG Quality: <span id="quality-value">85</span></label>
+                            <input type="range" id="quality" min="0" max="100" value="85">
+                        </div>
+                    </div>
+
+                    <button id="convert-btn">Convert Image</button>
+                </div>
+                
+                <!-- Results Area -->
+                <div id="result-display" class="settings-area" hidden>
+                    <h3>Conversion Complete!</h3>
+                    <img id="result-preview" src="#" alt="Image Preview">
+                    <a href="#" id="download-btn" class="button" download>Download Converted Image</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <script src="image-converter.js" defer></script>
+</body>
+</html>

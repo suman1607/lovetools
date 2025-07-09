@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>QR Code Generator</h1>
+            <p class="description">Create a QR code for a URL, text, or any other data instantly.</p>
+
+            <div class="tool-card">
+                
+                <div class="settings-area">
+                    <div class="input-group" style="width: 100%; max-width: 500px;">
+                        <label for="qr-text-input">Enter Text or URL</label>
+                        <!-- Reusing the .input-group and text input styles -->
+                        <input type="text" id="qr-text-input" placeholder="https://lovetools.com">
+                    </div>
+                    <!-- Using the primary button style for this action -->
+                    <button id="generate-qr-btn" style="margin-top: 1.5rem;">Generate QR Code</button>
+                </div>
+
+                <!-- QR Code will appear here -->
+                <div id="qr-code-container" hidden>
+                    <div id="qr-code-output"></div>
+                    <div id="download-link-container" hidden>
+                        <a id="download-link" href="#" class="button" download="qrcode.png">Download as PNG</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- IMPORTANT: Load the qrcode.js library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    
+    <!-- Your custom script, loaded after the library -->
+    <script src="qr-code-generator.js" defer></script>
+</body>
+</html>

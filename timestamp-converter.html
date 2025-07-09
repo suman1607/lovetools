@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Converter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+    <main>
+        <div class="tool-container">
+            <h1>Timestamp Converter</h1>
+            <p class="description">Convert Unix timestamps to human-readable dates, and vice versa.</p>
+            <div class="tool-card">
+                <div id="loading-message">
+                    <p>Loading date converter... Please wait.</p>
+                </div>
+                <div id="tool-content" hidden>
+                    <!-- Tool content... -->
+                    <div class="conversion-block">
+                        <h2>Timestamp → Human-Readable Date</h2>
+                        <div class="input-group">
+                            <label for="timestamp-input">Enter Unix Timestamp (seconds or milliseconds)</label>
+                            <input type="number" id="timestamp-input" placeholder="e.g., 1672531200" style="text-align: left; width: 100%;">
+                        </div>
+                        <div class="slug-output-group" style="margin-top: 1rem;">
+                            <input type="text" id="date-output" readonly placeholder="Your local time will appear here...">
+                            <button id="copy-date-btn" class="btn-secondary">Copy</button>
+                        </div>
+                    </div>
+                    <hr class="divider">
+                    <div class="conversion-block">
+                        <h2>Human-Readable Date → Timestamp</h2>
+                        <div class="input-group">
+                            <label for="date-input">Select Date & Time (Your Local Timezone)</label>
+                            <input type="datetime-local" id="date-input">
+                        </div>
+                        <div class="slug-output-group" style="margin-top: 1rem;">
+                            <input type="text" id="timestamp-output" readonly placeholder="Timestamp in seconds will appear here...">
+                            <button id="copy-timestamp-btn" class="btn-secondary">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2/index.min.js"></script>
+    <script src="timestamp-converter.js" defer></script>
+</body>
+</html>

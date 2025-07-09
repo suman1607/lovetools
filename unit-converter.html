@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Unit Converter</h1>
+            <p class="description">Quickly convert between different units of measurement.</p>
+
+            <div class="tool-card">
+                
+                <select id="category-select"></select>
+
+                <div class="converter-interface">
+                    <!-- "From" Group -->
+                    <div class="converter-group">
+                        <input type="number" id="input-from" value="1">
+                        <select id="select-from"></select>
+                    </div>
+
+                    <!-- Swap Button -->
+                    <div class="swap-button-container">
+                        <button id="swap-btn" title="Swap Units">↔</button>
+                    </div>
+
+                    <!-- "To" Group -->
+                    <div class="converter-group">
+                        <input type="number" id="input-to" readonly> <!-- Make the 'To' field readonly -->
+                        <select id="select-to"></select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <script src="unit-converter.js" defer></script>
+</body>
+</html>

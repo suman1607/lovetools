@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Meme Generator</h1>
+            <p class="description">Create your own custom memes. Just upload an image and add your text!</p>
+
+            <div class="tool-card">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <label for="image-upload" id="upload-label">
+                        <span>Click to browse or drag & drop an image</span>
+                        <small>Choose a base image for your meme</small>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" hidden>
+                </div>
+
+                <!-- Live Preview Area -->
+                <div id="meme-preview-container" hidden>
+                    <canvas id="meme-canvas"></canvas>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <div class="options-group">
+                        <h3>Meme Text</h3>
+                        <input type="text" id="top-text-input" placeholder="Enter top text...">
+                        <input type="text" id="bottom-text-input" placeholder="Enter bottom text...">
+                    </div>
+
+                    <div class="options-group">
+                        <h3>Text Style</h3>
+                        <div class="quality-slider">
+                            <label for="font-size">Font Size: <span id="font-size-value">50</span></label>
+                            <input type="range" id="font-size" min="10" max="150" value="50">
+                        </div>
+                        <div class="input-group">
+                            <label for="font-color">Font Color</label>
+                            <input type="color" id="font-color" value="#ffffff">
+                        </div>
+                    </div>
+                    
+                    <button id="download-btn-meme">Download Meme</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="meme-generator.js" defer></script>
+</body>
+</html>

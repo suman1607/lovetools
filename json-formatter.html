@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter & Validator - LoveTools</title>
+    
+    <!-- CodeMirror Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+    
+    <!-- Your main stylesheet -->
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>JSON Formatter & Validator</h1>
+            <p class="description">Paste your JSON here to beautify, format, and validate it instantly.</p>
+
+            <div class="tool-card">
+                
+                <div class="formatter-actions">
+                    <button id="format-btn" class="btn-secondary">Format / Beautify</button>
+                    <button id="clear-btn" class="btn-secondary">Clear</button>
+                </div>
+
+                <!-- Error message box, hidden by default -->
+                <div id="error-message-box" hidden></div>
+
+                <!-- The textarea that CodeMirror will replace -->
+                <textarea id="json-input" placeholder='{"example": "paste your json here"}'></textarea>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- IMPORTANT: Load CodeMirror libraries from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/javascript/javascript.min.js"></script>
+    
+    <!-- Your custom script, loaded after the libraries -->
+    <script src="json-formatter.js" defer></script>
+</body>
+</html>

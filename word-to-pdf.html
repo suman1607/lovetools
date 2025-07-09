@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word to PDF Converter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Word to PDF Converter</h1>
+            <p class="description">Upload your DOC or DOCX file to convert it to a high-quality PDF.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <label for="word-upload" id="upload-label">
+                        <span>Click to browse or drag & drop a Word file</span>
+                        <small>Supports: .doc, .docx</small>
+                    </label>
+                    <input type="file" id="word-upload" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <div id="file-info"></div>
+                    <button id="convert-word-btn" style="margin-top: 1.5rem;">Convert to PDF</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the tool-specific JavaScript file -->
+    <script src="word-to-pdf.js" defer></script>
+</body>
+</html>

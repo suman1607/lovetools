@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Splitter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>PDF Splitter</h1>
+            <p class="description">Extract pages or split a PDF into multiple files. Fast and secure, right in your browser.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <label for="pdf-upload" id="upload-label">
+                        <span>Click to browse or drag & drop a PDF</span>
+                        <small>Select one PDF file to split</small>
+                    </label>
+                    <input type="file" id="pdf-upload" accept=".pdf" hidden>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <div id="page-info"></div>
+                    
+                    <div class="split-mode-selection">
+                        <label><input type="radio" name="split-mode" value="extract" checked> Extract Pages</label>
+                        <label><input type="radio" name="split-mode" value="all"> Split All Pages</label>
+                    </div>
+
+                    <!-- Options for 'Extract Pages' mode -->
+                    <div id="extract-options" class="options-group">
+                        <h3>Pages to Extract</h3>
+                        <input type="text" id="page-ranges" placeholder="e.g., 1, 3, 5-7">
+                    </div>
+
+                    <button id="split-btn" style="margin-top: 1.5rem;">Split PDF</button>
+                </div>
+
+                <!-- Download Area -->
+                <div id="download-container" class="settings-area" hidden>
+                    <h3>Split Complete!</h3>
+                    <a href="#" id="download-btn" class="button" download>Download File(s)</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- IMPORTANT: Load required libraries from CDNs -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+    
+    <!-- Your custom script, loaded after the libraries -->
+    <script src="pdf-splitter.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermark Adder - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Watermark Adder</h1>
+            <p class="description">Add a custom text or image watermark to your photos in seconds.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area for main image -->
+                <div class="upload-area">
+                    <label for="main-image-upload" id="upload-label">
+                        <span>Click to upload your main image</span>
+                        <small>The image you want to apply the watermark to</small>
+                    </label>
+                    <input type="file" id="main-image-upload" accept="image/*" hidden>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <!-- Watermark Type Selection -->
+                    <div class="watermark-type-selection">
+                        <label><input type="radio" name="watermark-type" value="text" checked> Text Watermark</label>
+                        <label><input type="radio" name="watermark-type" value="image"> Image Watermark</label>
+                    </div>
+
+                    <!-- Text Watermark Options -->
+                    <div id="text-options" class="options-group">
+                        <h3>Text Options</h3>
+                        <input type="text" id="watermark-text" placeholder="Enter watermark text...">
+                        <div class="quality-slider">
+                            <label for="font-size">Font Size: <span id="font-size-value">48</span></label>
+                            <input type="range" id="font-size" min="10" max="200" value="48">
+                        </div>
+                        <div class="input-group">
+                            <label for="font-color">Font Color</label>
+                            <input type="color" id="font-color" value="#ffffff">
+                        </div>
+                    </div>
+
+                    <!-- Image Watermark Options -->
+                    <div id="image-options" class="options-group" hidden>
+                        <h3>Image Options</h3>
+                        <label for="watermark-image-upload">Upload Watermark Image:</label>
+                        <input type="file" id="watermark-image-upload" accept="image/*">
+                        <div class="quality-slider">
+                            <label for="image-scale">Scale: <span id="image-scale-value">30</span>%</label>
+                            <input type="range" id="image-scale" min="1" max="100" value="30">
+                        </div>
+                    </div>
+                    
+                    <!-- Common Options -->
+                    <div class="options-group">
+                        <h3>Common Options</h3>
+                        <div class="quality-slider">
+                            <label for="opacity">Opacity: <span id="opacity-value">70</span>%</label>
+                            <input type="range" id="opacity" min="0" max="100" value="70">
+                        </div>
+                        <div class="input-group">
+                           <label for="position-select">Position</label>
+                            <select id="position-select">
+                                <option value="center">Center</option>
+                                <option value="top-left">Top Left</option>
+                                <option value="top-right">Top Right</option>
+                                <option value="bottom-left">Bottom Left</option>
+                                <option value="bottom-right">Bottom Right</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn">Add Watermark</button>
+                </div>
+                
+                <!-- Results Area -->
+                <div id="result-display" class="settings-area" hidden style="margin-top: 2rem;">
+                    <h3>Result</h3>
+                    <img id="result-preview" src="#" alt="Watermarked Image Preview" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <a href="#" id="download-btn" class="button" download>Download Watermarked Image</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <script src="watermark-adder.js" defer></script>
+</body>
+</html>

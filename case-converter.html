@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Converter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Case Converter</h1>
+            <p class="description">Easily convert your text between different letter cases with a single click.</p>
+
+            <div class="tool-card">
+                
+                <!-- The main input area, reusing the style from the Word Counter -->
+                <textarea id="text-input-area" placeholder="Paste or type your text here..."></textarea>
+                
+                <div class="conversion-buttons">
+                    <button id="btn-upper" class="btn-secondary">UPPER CASE</button>
+                    <button id="btn-lower" class="btn-secondary">lower case</button>
+                    <button id="btn-sentence" class="btn-secondary">Sentence case</button>
+                    <button id="btn-title" class="btn-secondary">Title Case</button>
+                    <button id="btn-clear" class="btn-secondary">Clear Text</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the tool-specific JavaScript file -->
+    <script src="case-converter.js" defer></script>
+</body>
+</html>

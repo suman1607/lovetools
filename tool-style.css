@@ -1,0 +1,1500 @@
+/* --- Global Styles for ALL Tool Pages --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f6fb; /* Soft background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Shared Header Style --- */
+.page-header {
+    padding: 1rem 2rem;
+}
+
+.back-to-home {
+    color: #c7375d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-home:hover {
+    text-decoration: underline;
+}
+
+/* --- Shared Main Tool Layout --- */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem 2rem 2rem;
+}
+
+.tool-container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.tool-container h1 {
+    color: #c7375d;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.tool-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Upload Area --- */
+#upload-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #d1d8e0;
+    border-radius: 8px;
+    padding: 3rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#upload-label:hover {
+    background-color: #f9fafb;
+    border-color: #c7375d;
+}
+
+#upload-label span { font-weight: bold; color: #555; }
+#upload-label small { color: #888; margin-top: 0.5rem; }
+
+/* --- Settings & Action Buttons --- */
+.settings-area {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quality-slider { width: 100%; max-width: 400px; }
+.quality-slider label { font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; display: block; }
+input[type="range"] { width: 100%; cursor: pointer; }
+
+.button, #compress-btn {
+    background-color: #c7375d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:hover, #compress-btn:hover { background-color: #b33152; }
+.button:active, #compress-btn:active { transform: scale(0.98); }
+
+/* --- Results Area --- */
+.results-area {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: left;
+}
+
+.image-preview {
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.image-preview h2 { margin-top: 0; text-align: center; font-size: 1.2rem; color: #333; }
+.image-preview img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background-color: #f9fafb; border-radius: 4px; }
+.file-info { text-align: center; font-weight: bold; margin: 1rem 0 0.5rem 0; }
+.image-preview .button { display: block; width: 100%; text-align: center; text-decoration: none; margin-top: 1rem; }
+
+/* --- Utility & Responsive --- */
+[hidden] { display: none !important; }
+
+@media (max-width: 768px) {
+    .results-area { grid-template-columns: 1fr; }
+    main { padding: 1rem; }
+    .tool-card { padding: 1.5rem; }
+}
+/* --- Find this existing button style rule --- */
+.button, #compress-btn, #resize-btn, #convert-btn {
+    /* ... existing styles ... */
+}
+
+/* --- And UPDATE it to include the new button ID --- */
+.button,
+#compress-btn,
+#resize-btn,
+#convert-btn,
+#generate-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* --- Ensure this hover rule also includes the new button --- */
+.button:hover,
+#compress-btn:hover,
+#resize-btn:hover,
+#convert-btn:hover,
+#generate-btn:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* --- And the active rule --- */
+.button:active,
+#compress-btn:active,
+#resize-btn:active,
+#convert-btn:active,
+#generate-btn:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+
+
+/* --- Styles for Watermark Adder Tool (These should already be here) --- */
+.watermark-type-selection {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.watermark-type-selection label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.options-group {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.options-group h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0;
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+#compress-btn,
+#resize-btn,
+#convert-btn,
+#generate-btn,
+#download-btn-meme { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Update the :hover rule */
+.button:hover,
+#compress-btn:hover,
+#resize-btn:hover,
+#convert-btn:hover,
+#generate-btn:hover,
+#download-btn-meme:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* Update the :active rule */
+.button:active,
+#compress-btn:active,
+#resize-btn:active,
+#convert-btn:active,
+#generate-btn:active,
+#download-btn-meme:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+
+
+/* --- 2. ADD these new styles for the Meme Generator at the bottom --- */
+
+#meme-preview-container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 600px; /* Control the max size of the preview */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#meme-canvas {
+    width: 100%;
+    height: auto;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+#compress-btn,
+#resize-btn,
+#convert-btn,
+#generate-btn,
+#download-btn-meme,
+#merge-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover rule */
+.button:hover,
+#compress-btn:hover,
+#resize-btn:hover,
+#convert-btn:hover,
+#generate-btn:hover,
+#download-btn-meme:hover,
+#merge-btn:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* Update the :active rule */
+.button:active,
+#compress-btn:active,
+#resize-btn:active,
+#convert-btn:active,
+#generate-btn:active,
+#download-btn-meme:active,
+#merge-btn:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+
+
+/* --- 2. ADD these new styles for the PDF Merger at the bottom --- */
+
+#file-list-container {
+    margin-top: 1.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-height: 100px;
+    background-color: #f9fafb;
+}
+
+#file-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    cursor: grab;
+    user-select: none;
+    justify-content: space-between;
+}
+.file-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Style for the file being dragged */
+.file-item.dragging {
+    opacity: 0.5;
+    background-color: #eaf2ff;
+}
+
+.file-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.file-size {
+    font-size: 0.85rem;
+    color: #666;
+    margin-left: 1rem;
+}
+
+#download-container {
+    margin-top: 1.5rem;
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#merge-btn,
+#split-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover rule */
+.button:hover,
+/* ... other button IDs ... */
+#merge-btn:hover,
+#split-btn:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* Update the :active rule */
+.button:active,
+/* ... other button IDs ... */
+#merge-btn:active,
+#split-btn:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+
+
+/* --- 2. ADD these new styles for the PDF Splitter at the bottom --- */
+
+.split-mode-selection {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.split-mode-selection label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+#page-info {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    background-color: #f9fafb;
+    border-radius: 6px;
+    display: inline-block;
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#split-btn,
+#compress-pdf-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover rule */
+.button:hover,
+/* ... other button IDs ... */
+#split-btn:hover,
+#compress-pdf-btn:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* Update the :active rule */
+.button:active,
+/* ... other button IDs ... */
+#split-btn:active,
+#compress-pdf-btn:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+
+
+/* --- 2. ADD these new styles for the PDF Compressor at the bottom --- */
+
+.warning-box {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #f39c12; /* Orange border */
+    background-color: #fef9e7; /* Light yellow background */
+    color: #856404; /* Dark yellow/brown text */
+    border-radius: 8px;
+    text-align: left;
+}
+.warning-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+/* --- ADD this new style to the bottom of tool-style.css --- */
+
+/* Style for the upload area while libraries are loading */
+.upload-area.disabled {
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+.upload-area.disabled span {
+    color: #6c757d; /* A muted gray color */
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#compress-pdf-btn,
+#convert-word-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover rule */
+.button:hover,
+/* ... other button IDs ... */
+#compress-pdf-btn:hover,
+#convert-word-btn:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* Update the :active rule */
+.button:active,
+/* ... other button IDs ... */
+#compress-pdf-btn:active,
+#convert-word-btn:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#convert-word-btn,
+#convert-to-jpg-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover rule */
+.button:hover,
+/* ... other button IDs ... */
+#convert-word-btn:hover,
+#convert-to-jpg-btn:hover { /* <-- ADD THIS ID */
+    background-color: #b33152;
+}
+
+/* Update the :active rule */
+.button:active,
+/* ... other button IDs ... */
+#convert-word-btn:active,
+#convert-to-jpg-btn:active { /* <-- ADD THIS ID */
+    transform: scale(0.98);
+}
+/* --- Ensure these styles exist at the bottom of tool-style.css --- */
+
+/* Style for the upload area while libraries are loading */
+.upload-area.disabled {
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+.upload-area.disabled span {
+    color: #6c757d; /* A muted gray color */
+}
+
+/* Also ensure the button ID is in the main theme styles */
+.button,
+/* ... other button IDs ... */
+#convert-word-btn,
+#convert-to-jpg-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles */
+}
+/* Remember to add the ID to the :hover and :active rules as well */
+/* --- ADD these new styles for the Word Counter at the bottom of tool-style.css --- */
+
+/* Style for the main text input area */
+#text-input-area {
+    width: 100%;
+    min-height: 250px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    resize: vertical; /* Allow user to resize the box vertically */
+    margin-bottom: 1.5rem;
+}
+
+#text-input-area:focus {
+    outline: none;
+    border-color: #c7375d;
+    box-shadow: 0 0 0 3px rgba(199, 55, 93, 0.15);
+}
+
+/* Container for the statistics */
+#stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+/* Individual stat block */
+.stat-item {
+    padding: 1rem 1.5rem;
+    background-color: #f9fafb;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c7375d;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+/* We don't need a custom button style as there is no primary action button */
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#word-counter-btn, /* This was a mistake in a previous step, but let's assume it might exist */
+#generate-lorem-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover and :active rules similarly */
+.button:hover,
+#generate-lorem-btn:hover { /* ... */ }
+
+.button:active,
+#generate-lorem-btn:active { /* ... */ }
+
+
+/* --- 2. ADD these new styles for the Lorem Ipsum tool at the bottom --- */
+
+/* Style specifically for the read-only output textarea */
+#lorem-output-area {
+    width: 100%;
+    min-height: 300px;
+    padding: 1rem;
+    font-size: 1rem; /* A slightly smaller font is better for placeholder text */
+    line-height: 1.6;
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    resize: vertical;
+    margin-top: 1.5rem; /* Add some space above the output */
+    background-color: #f9fafb; /* Differentiate it from an input field */
+    cursor: copy; /* Indicate that it's for copying */
+}
+
+#lorem-output-area:focus {
+    outline: none;
+    border-color: #c7375d;
+}
+/* --- ADD these new styles for the Case Converter at the bottom of tool-style.css --- */
+
+/* Style for the container holding the conversion buttons */
+.conversion-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem; /* A bit smaller gap for more buttons */
+    margin-bottom: 1.5rem;
+}
+
+/* A new, secondary button style for multiple actions */
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+    border-color: #aaa;
+}
+
+.btn-secondary:active {
+    transform: scale(0.97);
+    background-color: #d5d5d5;
+}
+
+/* Use the existing style for the main textarea */
+/* #text-input-area { ... from word-counter ... } */
+/* --- ADD these new styles for the Text to Slug tool at the bottom --- */
+
+/* A container to group the output field and copy button */
+#slug-output-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+/* The output field for the slug */
+#slug-output {
+    flex-grow: 1; /* Allows the input to take up the remaining space */
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font is good for slugs */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+#slug-output:focus {
+    outline: none;
+    border-color: #c7375d;
+}
+
+/* The copy button will re-use the .btn-secondary style we created earlier */
+/* No new button styles are needed if you have .btn-secondary */
+/* --- ADD these new styles for the Markdown Editor at the bottom of tool-style.css --- */
+
+/* The main two-column layout container */
+.editor-layout {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    min-height: 600px; /* Give the editor a good default height */
+}
+
+/* The right-hand preview panel */
+#html-preview {
+    flex: 1; /* Make it take up half the space */
+    padding: 1rem 1.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    overflow-y: auto; /* Allow scrolling for long content */
+    line-height: 1.6;
+}
+
+/* The left-hand input textarea will reuse the #text-input-area style */
+/* We just need to make sure it also takes up half the space */
+#markdown-input {
+    flex: 1;
+}
+
+/* --- Styles for the RENDERED content inside the preview panel --- */
+#html-preview h1, #html-preview h2, #html-preview h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+#html-preview p {
+    margin-bottom: 1em;
+}
+#html-preview a {
+    color: #c7375d;
+    text-decoration: none;
+}
+#html-preview a:hover {
+    text-decoration: underline;
+}
+#html-preview code {
+    background-color: #eef;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#html-preview pre code {
+    display: block;
+    padding: 1em;
+    background-color: #333;
+    color: #eee;
+    white-space: pre-wrap;
+}
+#html-preview blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 1em;
+    margin-left: 0;
+    color: #666;
+}
+#html-preview ul, #html-preview ol {
+    padding-left: 1.5em;
+}
+
+/* Make the layout stack on smaller screens */
+@media (max-width: 800px) {
+    .editor-layout {
+        flex-direction: column;
+    }
+}
+/* --- ADD these new styles for the JSON Formatter at the bottom of tool-style.css --- */
+
+/* CodeMirror requires a specific class on its container */
+.CodeMirror {
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    height: 500px; /* Give the editor a good default height */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.CodeMirror-focused {
+    border-color: #c7375d;
+}
+
+/* Container for the action buttons */
+.formatter-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Style for the error message box */
+#error-message-box {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e74c3c; /* Red border */
+    background-color: #fdedec; /* Light red background */
+    color: #c0392b; /* Dark red text */
+    border-radius: 8px;
+    text-align: left;
+    white-space: pre-wrap; /* Preserve formatting for error messages */
+    font-family: 'Courier New', Courier, monospace;
+}
+/* --- ADD these new styles for the Base64 Encoder at the bottom of tool-style.css --- */
+
+/* The main layout for the two text areas */
+.encoder-layout {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* A container for each textarea and its label */
+.textarea-group {
+    flex: 1; /* Make each group take up half the space */
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea-group label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* The swap icon in the middle */
+#swap-icon {
+    font-size: 2rem;
+    color: #888;
+    cursor: default; /* Not clickable, just for display */
+}
+
+/* We can reuse the #text-input-area style for these textareas */
+/* We'll just apply the class directly in the HTML */
+.encoder-textarea {
+    min-height: 350px;
+}
+
+/* A container for the action buttons at the bottom */
+.encoder-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Make the layout stack on smaller screens */
+@media (max-width: 800px) {
+    .encoder-layout {
+        flex-direction: column;
+        align-items: stretch; /* Make items take full width */
+    }
+    #swap-icon {
+        transform: rotate(90deg); /* Point the arrow down */
+        text-align: center;
+        margin: -0.5rem 0; /* Adjust spacing when stacked */
+    }
+}
+/* --- ADD these new styles for the Color Picker at the bottom of tool-style.css --- */
+
+/* The large, interactive color preview area */
+#color-preview {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.1); /* A subtle border */
+}
+
+/* The HEX code text displayed inside the preview */
+#hex-preview-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    /* The text color (black or white) will be set via JavaScript */
+}
+
+/* Container for the color input and other controls */
+.color-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Styling the native HTML color input element */
+#color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+#color-input::-webkit-color-swatch {
+    border-radius: 50%; /* Make it a circle */
+    border: 2px solid #e1e4e8;
+}
+#color-input::-moz-color-swatch {
+    border-radius: 50%;
+    border: 2px solid #e1e4e8;
+}
+
+/* Container for the text output fields */
+.color-values-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Center the outputs */
+}
+
+/* We will reuse .slug-output-group for the individual value rows */
+/* --- ENSURE these styles exist in tool-style.css (from previous tools) --- */
+
+/* For the main two-column layout */
+.editor-layout {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    min-height: 500px;
+}
+@media (max-width: 800px) {
+    .editor-layout { flex-direction: column; }
+}
+
+/* For the CodeMirror editor instances */
+.CodeMirror {
+    flex: 1; /* Make it take up half the space */
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    height: auto; /* Allow it to grow with the layout */
+    font-size: 1rem;
+}
+.CodeMirror-focused {
+    border-color: #c7375d;
+}
+
+/* For the buttons */
+.formatter-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+/* We will reuse the .btn-secondary class */
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#minify-btn, /* This should be a secondary button, but let's correct that if needed */
+#generate-qr-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover and :active rules similarly */
+.button:hover,
+#generate-qr-btn:hover { /* ... */ }
+
+.button:active,
+#generate-qr-btn:active { /* ... */ }
+
+
+/* --- 2. ADD these new styles for the QR Code tool at the bottom --- */
+
+/* Container for the QR code image */
+#qr-code-container {
+    margin: 2rem auto 1.5rem auto; /* Add vertical space and center horizontally */
+    padding: 1rem;
+    background-color: white; /* Give it a solid background */
+    display: inline-block; /* Make it only as wide as its content */
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* The actual QR code will be generated inside this div by the library */
+#qr-code-output {
+    display: flex; /* Helps with alignment if canvas/img is generated */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the download link */
+#download-link-container {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+/* --- 1. UPDATE your existing button styles to include the new ID --- */
+
+/* Update the main rule */
+.button,
+/* ... other button IDs ... */
+#generate-qr-btn,
+#generate-password-btn { /* <-- ADD THIS ID */
+    background-color: #c7375d;
+    /* ... other styles remain the same ... */
+}
+
+/* Update the :hover and :active rules similarly */
+.button:hover,
+#generate-password-btn:hover { /* ... */ }
+
+.button:active,
+#generate-password-btn:active { /* ... */ }
+
+
+/* --- 2. ADD these new styles for the Password Generator at the bottom --- */
+
+/* The display field for the generated password */
+#password-output {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1.5rem; /* Make the password large and clear */
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+/* Container for the checkbox options */
+.checkbox-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-options input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+/* --- ADD these new styles for the Timestamp Converter at the bottom of tool-style.css --- */
+
+/* A container for a full conversion block (e.g., Timestamp -> Human) */
+.conversion-block {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.conversion-block h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 0.5rem;
+}
+
+/* Style for the native date-time input */
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* A divider to separate the two conversion flows */
+.divider {
+    height: 1px;
+    background-color: #d1d8e0;
+    border: none;
+    margin: 2rem 0;
+}
+/* --- ADD these styles to the BOTTOM of your tool-style.css --- */
+
+/* A container for a full conversion block (e.g., Timestamp -> Human) */
+.conversion-block {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.conversion-block h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1rem;
+ to your main `tool-style.css`, the browser applies every style rule **twice**, causing the "double design" problem you are seeing.
+
+Let's fix this permanently by going back to your correct file structure. I will provide the clean, non-duplicated code for each of the three files.
+
+---
+
+### **The Fix: Clean and Separate Files**
+
+We will now ensure each file only has the code it's supposed to have.
+
+#### **Step 1: Clean Your `tool-style.css`**
+
+Open your main `tool-style.css` file. Make sure the styles for the Timestamp Converter are present, but only **once**. If you see them duplicated, delete the extra block.
+
+Here is the correct block of CSS that should be at the bottom of your `tool-style.css`:
+
+```css
+/* --- Styles for Timestamp Converter (Ensure this block appears only ONCE) --- */
+
+.conversion-block {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.conversion-block h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 0.5rem;
+}
+
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.divider {
+    height: 1px;
+    background-color: #d1d8e0;
+    border: none;
+    margin: 2rem 0;
+}
+/* --- REPLACE old Unit Converter styles with this new, better version --- */
+
+/* Main category dropdown */
+#category-select {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2.5rem auto; /* More space below */
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    background-color: white;
+    appearance: none; /* Removes default dropdown arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+#category-select:focus {
+    outline: none;
+    border-color: #c7375d;
+    box-shadow: 0 0 0 3px rgba(199, 55, 93, 0.15);
+}
+
+
+/* Flex container for the two conversion blocks */
+.converter-interface {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Make groups equal height */
+    flex-wrap: wrap; 
+    gap: 0; /* Remove gap, we will use margins */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* A single "From" or "To" block */
+.converter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    min-width: 250px;
+    border: 1px solid #d1d8e0;
+}
+
+/* Style for the "From" group on the left */
+.converter-group:first-of-type {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+/* Style for the "To" group on the right */
+.converter-group:last-of-type {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-left: none; /* Avoid double border */
+}
+
+/* Input field inside the group */
+.converter-group input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.75rem; /* Larger font */
+    font-weight: bold;
+    border: none;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #d1d8e0;
+}
+.converter-group input:focus {
+    outline: none;
+    background-color: #fff;
+}
+
+/* Make the result field look different */
+#input-to {
+    background-color: #fff;
+    color: #c7375d; /* Theme color for the result */
+}
+
+/* Unit selection dropdown inside the group */
+.converter-group select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #fff;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+}
+.converter-group select:focus {
+    outline: none;
+}
+
+/* Add rounded corners to the elements inside */
+.converter-group:first-of-type input { border-top-left-radius: 11px; }
+.converter-group:first-of-type select { border-bottom-left-radius: 11px; }
+.converter-group:last-of-type input { border-top-right-radius: 11px; }
+.converter-group:last-of-type select { border-bottom-right-radius: 11px; }
+
+
+/* Container for the swap button */
+.swap-button-container {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* The swap button - THEMED! */
+#swap-btn {
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    border-radius: 50%;
+    border: none;
+    /* Use the theme color */
+    background-color: #c7375d;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#swap-btn:hover {
+    background-color: #b33152; /* Darker theme color on hover */
+    transform: rotate(180deg);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    .converter-interface {
+        flex-direction: column;
+        gap: 1.5rem; /* Add gap back for vertical stacking */
+    }
+    .converter-group:first-of-type,
+    .converter-group:last-of-type {
+        border-radius: 12px; /* Full radius on all corners */
+        border-left: 1px solid #d1d8e0; /* Add border back */
+    }
+    .converter-group:first-of-type input,
+    .converter-group:first-of-type select,
+    .converter-group:last-of-type input,
+    .converter-group:last-of-type select {
+        border-radius: 0; /* Reset inner radius */
+    }
+    .converter-group input { border-top-left-radius: 11px; border-top-right-radius: 11px; }
+    .converter-group select { border-bottom-left-radius: 11px; border-bottom-right-radius: 11px; }
+
+    .swap-button-container {
+        transform: rotate(90deg); /* Rotate the button for vertical layout */
+    }
+}
+/* --- REPLACE any old Hash Generator styles with this new, better version --- */
+
+/* We can re-use the textarea style from the Word Counter tool */
+#text-input-area {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 2rem; /* Add more space below the input */
+}
+
+#text-input-area:focus {
+    outline: none;
+    border-color: #c7375d;
+    box-shadow: 0 0 0 3px rgba(199, 55, 93, 0.15);
+}
+
+/* Container for all the hash result cards */
+#hash-results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between each hash card */
+    text-align: left;
+}
+
+/* A single card for a hash type (e.g., MD5) */
+.hash-result-row {
+    display: flex;
+    flex-direction: column; /* Stack the label on top of the content */
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden; /* Important for containing the rounded corners */
+}
+
+/* The label for the hash type (MD5, SHA-1, etc.) */
+.hash-label {
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* Flex container for the hash string and the copy button */
+.hash-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+/* The output field where the hash string is displayed */
+.hash-output {
+    flex-grow: 1; /* Take up all available space */
+    font-family: 'Menlo', 'Consolas', 'Monaco', monospace; /* Professional font for hashes */
+    font-size: 1rem;
+    color: #333;
+    word-break: break-all; /* Allow long hash strings to wrap cleanly */
+}
+
+/* The copy button - new themed design */
+.copy-btn {
+    background-color: #c7375d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0; /* Prevent the button from shrinking on small screens */
+}
+
+.copy-btn:hover {
+    background-color: #b33152; /* Darker theme color on hover */
+}
+/* --- Styles for Hash Generator --- */
+
+/* Text input area used by the tool */
+#text-input-area {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border: 1px solid #d1d8e0;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 2rem;
+}
+
+#text-input-area:focus {
+    outline: none;
+    border-color: #c7375d;
+    box-shadow: 0 0 0 3px rgba(199, 55, 93, 0.15);
+}
+
+/* Container for all the hash result cards */
+#hash-results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between each hash card */
+    text-align: left;
+}
+
+/* A single card for a hash type (e.g., MD5) */
+.hash-result-row {
+    display: flex;
+    flex-direction: column; /* Stack the label on top of the content */
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden; /* Important for containing the rounded corners */
+}
+
+/* The label for the hash type (MD5, SHA-1, etc.) */
+.hash-label {
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* Flex container for the hash string and the copy button */
+.hash-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+/* The output field where the hash string is displayed */
+.hash-output {
+    flex-grow: 1; /* Take up all available space */
+    font-family: 'Menlo', 'Consolas', 'Monaco', monospace; /* Professional font for hashes */
+    font-size: 1rem;
+    color: #333;
+    word-break: break-all; /* Allow long hash strings to wrap cleanly */
+}
+
+/* The copy button - new themed design */
+.copy-btn {
+    background-color: #c7375d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0; /* Prevent the button from shrinking on small screens */
+}
+
+.copy-btn:hover {
+    background-color: #b33152; /* Darker theme color on hover */
+}

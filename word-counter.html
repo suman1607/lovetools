@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Word Counter</h1>
+            <p class="description">Instantly count the number of words, characters, and paragraphs in your text.</p>
+
+            <div class="tool-card">
+                
+                <textarea id="text-input-area" placeholder="Start typing or paste your text here..."></textarea>
+                
+                <div id="stats-container">
+                    <div class="stat-item">
+                        <span id="word-count" class="stat-value">0</span>
+                        <div class="stat-label">Words</div>
+                    </div>
+                    <div class="stat-item">
+                        <span id="char-count" class="stat-value">0</span>
+                        <div class="stat-label">Characters</div>
+                    </div>
+                    <div class="stat-item">
+                        <span id="para-count" class="stat-value">0</span>
+                        <div class="stat-label">Paragraphs</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the tool-specific JavaScript file -->
+    <script src="word-counter.js" defer></script>
+</body>
+</html>

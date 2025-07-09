@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor - LoveTools</title>
+    <!-- Link to the shared tool stylesheet -->
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <!-- Link directly to the homepage -->
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Image Compressor</h1>
+            <p class="description">Reduce your image file size by adjusting the quality. All processing is done in your browser.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <label for="image-upload" id="upload-label">
+                        <span>Click to browse or drag & drop an image</span>
+                        <small>Supports: .png, .jpg, .jpeg</small>
+                    </label>
+                    <input type="file" id="image-upload" accept=".png, .jpg, .jpeg" hidden>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <div class="quality-slider">
+                        <label for="quality">Quality (0-100): <span id="quality-value">75</span></label>
+                        <input type="range" id="quality" min="0" max="100" value="75">
+                    </div>
+                    <button id="compress-btn">Compress Image</button>
+                </div>
+                
+                <!-- Results Area -->
+                <div class="results-area" hidden>
+                    <div class="image-preview original">
+                        <h2>Original</h2>
+                        <img id="original-preview" src="#" alt="Original Image Preview">
+                        <p class="file-info" id="original-size"></p>
+                    </div>
+                    <div class="image-preview compressed">
+                        <h2>Compressed</h2>
+                        <img id="compressed-preview" src="#" alt="Compressed Image Preview">
+                        <p class="file-info" id="compressed-size"></p>
+                        <a href="#" id="download-btn" class="button" download="compressed-image.jpg">Download Image</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the tool-specific JavaScript file -->
+    <script src="image-compressor.js" defer></script>
+</body>
+</html>

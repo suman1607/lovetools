@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Slug Converter - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Text to Slug Converter</h1>
+            <p class="description">Generate a clean, URL-friendly slug from any string of text.</p>
+
+            <div class="tool-card">
+                
+                <!-- The main input area, reusing style from previous tools -->
+                <textarea id="text-input-area" placeholder="Enter your page title or text here..."></textarea>
+                
+                <div id="slug-output-group">
+                    <input type="text" id="slug-output" readonly placeholder="your-slug-will-appear-here">
+                    <button id="copy-btn" class="btn-secondary">Copy</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the tool-specific JavaScript file -->
+    <script src="text-to-slug.js" defer></script>
+</body>
+</html>

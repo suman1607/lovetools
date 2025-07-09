@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Minifier - LoveTools</title>
+    
+    <!-- CodeMirror Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+    
+    <!-- Your main stylesheet -->
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>CSS Minifier</h1>
+            <p class="description">Paste your CSS code to compress and minify it for production.</p>
+
+            <div class="tool-card">
+                
+                <div class="formatter-actions">
+                    <button id="minify-btn" class="btn-secondary">Minify CSS</button>
+                    <button id="copy-btn" class="btn-secondary">Copy Minified</button>
+                    <button id="clear-btn" class="btn-secondary">Clear</button>
+                </div>
+
+                <div class="editor-layout">
+                    <!-- Left Panel: CSS Input -->
+                    <textarea id="css-input" placeholder="/* Paste your readable CSS code here */
+body {
+  line-height: 1.5;
+  color: #333;
+}"></textarea>
+
+                    <!-- Right Panel: Minified Output -->
+                    <textarea id="minified-output" placeholder="/* Minified CSS will appear here */"></textarea>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- IMPORTANT: Load CodeMirror libraries from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/css/css.min.js"></script>
+    
+    <!-- Your custom script, loaded after the libraries -->
+    <script src="css-minifier.js" defer></script>
+</body>
+</html>

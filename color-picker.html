@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Color Picker</h1>
+            <p class="description">Pick a color and get its HEX, RGB, and HSL values instantly.</p>
+
+            <div class="tool-card">
+                
+                <div id="color-preview">
+                    <span id="hex-preview-text"></span>
+                </div>
+
+                <div class="color-controls">
+                    <input type="color" id="color-input" value="#c7375d">
+                </div>
+
+                <div class="color-values-container">
+                    <!-- HEX Value -->
+                    <div class="slug-output-group">
+                        <input type="text" id="hex-output" readonly>
+                        <button id="copy-hex-btn" class="btn-secondary">Copy</button>
+                    </div>
+                    <!-- RGB Value -->
+                    <div class="slug-output-group">
+                        <input type="text" id="rgb-output" readonly>
+                        <button id="copy-rgb-btn" class="btn-secondary">Copy</button>
+                    </div>
+                    <!-- HSL Value -->
+                    <div class="slug-output-group">
+                        <input type="text" id="hsl-output" readonly>
+                        <button id="copy-hsl-btn" class="btn-secondary">Copy</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <script src="color-picker.js" defer></script>
+</body>
+</html>

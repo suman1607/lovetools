@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Lorem Ipsum Generator</h1>
+            <p class="description">Create placeholder text for your designs and layouts.</p>
+
+            <div class="tool-card">
+                
+                <div class="settings-area">
+                    <div class="resize-options"> <!-- Re-using this class for layout -->
+                        <div class="input-group">
+                            <label for="paragraph-count">Number of Paragraphs</label>
+                            <input type="number" id="paragraph-count" min="1" max="100" value="5">
+                        </div>
+                    </div>
+                    <button id="generate-lorem-btn">Generate Text</button>
+                </div>
+
+                <textarea id="lorem-output-area" readonly placeholder="Your generated text will appear here..."></textarea>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the tool-specific JavaScript file -->
+    <script src="lorem-ipsum-generator.js" defer></script>
+</body>
+</html>

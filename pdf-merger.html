@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger - LoveTools</title>
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>PDF Merger</h1>
+            <p class="description">Combine multiple PDF files into one. Drag and drop to reorder the files.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <label for="pdf-upload" id="upload-label">
+                        <span>Click to browse or drag & drop PDFs</span>
+                        <small>Select two or more PDF files to merge</small>
+                    </label>
+                    <!-- 'multiple' attribute allows selecting multiple files -->
+                    <input type="file" id="pdf-upload" accept=".pdf" multiple hidden>
+                </div>
+
+                <!-- File List and Action Area -->
+                <div class="settings-area" hidden>
+                    <h3>Your Files (drag to reorder)</h3>
+                    <div id="file-list-container">
+                        <ul id="file-list">
+                            <!-- JS will populate this list -->
+                        </ul>
+                    </div>
+                    <button id="merge-btn" style="margin-top: 1.5rem;">Merge PDFs</button>
+                </div>
+
+                <!-- Download Area -->
+                <div id="download-container" class="settings-area" hidden>
+                    <h3>Merge Complete!</h3>
+                    <a href="#" id="download-btn" class="button" download="merged.pdf">Download Merged PDF</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- IMPORTANT: Load the pdf-lib library from a CDN -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+    <!-- Your custom script, loaded after the library -->
+    <script src="pdf-merger.js" defer></script>
+</body>
+</html>

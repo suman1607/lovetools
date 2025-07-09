@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer - LoveTools</title>
+    <!-- Links to the same shared stylesheet -->
+    <link rel="stylesheet" href="tool-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <h1>Image Resizer</h1>
+            <p class="description">Easily change the dimensions of your images. Maintain aspect ratio with a single click.</p>
+
+            <div class="tool-card">
+                <!-- Upload Area (re-used from other tools) -->
+                <div class="upload-area">
+                    <label for="image-upload" id="upload-label">
+                        <span>Click to browse or drag & drop an image</span>
+                        <small>Supports: .png, .jpg, .jpeg</small>
+                    </label>
+                    <input type="file" id="image-upload" accept=".png, .jpg, .jpeg" hidden>
+                </div>
+
+                <!-- Settings & Action Area -->
+                <div class="settings-area" hidden>
+                    <div class="resize-options">
+                        <div class="input-group">
+                            <label for="resize-width">New Width (px)</label>
+                            <input type="number" id="resize-width" min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="resize-height">New Height (px)</label>
+                            <input type="number" id="resize-height" min="1">
+                        </div>
+                        <label class="aspect-ratio-lock">
+                            <input type="checkbox" id="aspect-lock" checked>
+                            Lock aspect ratio
+                        </label>
+                    </div>
+                    <button id="resize-btn">Resize Image</button>
+                </div>
+                
+                <!-- Results Area -->
+                <div class="results-area" hidden>
+                    <div class="image-preview original">
+                        <h2>Original</h2>
+                        <img id="original-preview" src="#" alt="Original Image Preview">
+                        <p class="file-info" id="original-dimensions"></p>
+                    </div>
+                    <div class="image-preview compressed"> <!-- Using same class for styling -->
+                        <h2>Resized</h2>
+                        <img id="resized-preview" src="#" alt="Resized Image Preview">
+                        <p class="file-info" id="resized-dimensions"></p>
+                        <a href="#" id="download-btn" class="button" download="resized-image.png">Download Image</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Link to the image resizer's specific JavaScript file -->
+    <script src="image-resizer.js" defer></script>
+</body>
+</html>
